@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Some notes</title>
+  <style>
+    body {
+      background-color: darkslategray;
+      color: wheat;
+      font-family: monospace;
+      font-size: medium;
+  }
+  button {
+    text-align: center
+  }
+  div.center {text-align:center; margin:auto; justify-content: center; vertical-align: middle; align-items: center; top: 50%;}
+  textarea {resize: none;}
+  p.center {text-align:center;}
+  </style>
+</head>
+
+<body>
+  <div>
+    <p class="center">Some math:</p>
+    <p>
+      When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+      \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+    </p>
+  </div>
+<hr>
+<div>
+  <p class="center">Languages other than english:</p>
+  <p>French: "Astérix, anciennement Astérix le Gaulois, est une série de bande dessinée française créée le 29 octobre 1959 par le scénariste français René Goscinny et le dessinateur français Albert Uderzo dans le no 1 du journal français Pilote."</p>
+  <p>Chinese: 《阿斯泰利克斯历险记》(法語: Astérix le Gaulois), 又译《高卢英雄传》,是一套法国系列漫画, 由勒内·戈西尼 (编剧) 和阿尔伯特·乌德佐 (Albert Uderzo,漫画家, 1977年戈西尼逝世后兼编剧) 共同创作。这套漫画在欧洲和南美非常知名, 33本漫画书和画册已经译成111种语言和方言, 並且多次改編成長篇動畫電影、真人電影、電玩遊戲等，但在中国、日本、美国等地知名度不大。</p>
+  <p>Może kawałek tekstu w języku polskim? I typowe w nim litery: ą, ć, ę, ł, ś, ź, ż</p>
+</div>
+<hr>
+<div class="center">
+  <p>Simple calculator:</p>
+  <input type="text" id="inp001" name="input01" placeholder="input">
+  <button id="btn_1">some action</button>
+  <textarea name="txta01" id="ta001" cols="30" rows="5" placeholder="Output"></textarea>
+</div>
+<hr>
+<div class="center">
+  <p>Current date and time:</p>
+  <p id="currentDandT"></p>
+</div>
+</body>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="module">
+  // imports
+  import * as IPFS from 'https://cdnjs.cloudflare.com/ajax/libs/ipfs/0.64.2/index.min.js'
+
+  //eventlisteners
+  document.getElementById('btn_1').addEventListener('click', f002);
+  window.addEventListener('load', f003);
+
+  // definitions of the functions
+  async function f001(){
+  const hash = 'QmWnvjWuNZ3TFtUCosaL3Vrit5bqQNRwS3qfTJJBbQH5sK';
+  const node = await IPFS.create()
+  const stream = node.cat(hash)
+  const decoder = new TextDecoder()
+  let data = ''
+  for await (const chunk of stream) {
+    // chunks of data are returned as a Uint8Array, convert it back to a string
+    data += decoder.decode(chunk, { stream: true })
+  };
+  //document.getElementById("ta001").value = data;
+  console.log(data);
+};
+
+function f002(){
+  document.getElementById("ta001").value = eval(document.getElementById("inp001").value);
+};
+
+function f003(){
+  document.getElementById('currentDandT').innerText = Date();
+};
+//f003();
+</script>
+
+</html>
