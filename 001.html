@@ -19,7 +19,6 @@
   p.center {text-align:center;}
   </style>
 </head>
-
 <body>
   <div>
     <p class="center">Some math:</p>
@@ -70,7 +69,6 @@
     data += decoder.decode(chunk, { stream: true })
   };
   //document.getElementById("ta001").value = data;
-  console.log(data);
 };
 
 function f002(){
@@ -80,7 +78,15 @@ function f002(){
 function f003(){
   document.getElementById('currentDandT').innerText = Date();
 };
-//f003();
+
+let v1 = 'Hello World [v1]';
+const v2 = 'Hello World [v2]';
+var v3 = 'Hello World [v3]';
+console.log(`${v1}, ${v2}, ${v3}`);
+function f004(){let v4 = 'Hello World [v4]'; var v5 = 'Hello World [v5]'; const v6 = 'Hello World [v6]'; let v1 = 'change from inside the function ...';  console.log(`${v1}, ${v4}`);};
+f004();
+// console.log(`${v4} - outside`); console.log(`${v5} - outside`); console.log(`${v6} - outside`);
+console.log(`${v1} - outside`);
 </script>
 
 </html>
