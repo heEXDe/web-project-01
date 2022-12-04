@@ -79,8 +79,12 @@ function f003(){
   document.getElementById('currentDandT').innerText = Date();
 };
 
-console.log("Hello World it's me!".split(" "));
-console.log(("Hello World it's me!".split(" ")[0][0] + "Hello World it's me!".split(" ")[1][0]).toLowerCase());
+// exercise: https://www.codewars.com/kata/55f9bca8ecaa9eac7100004a/train/javascript
+function past(h, m, s){
+  return h * 3600000 + m * 60000 + s * 1000;
+}
+
+console.log(past(1, 0, 1));
 </script>
 
 </html>
