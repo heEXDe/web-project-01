@@ -79,18 +79,21 @@ function f003(){
   document.getElementById('currentDandT').innerText = Date();
 };
 
-// exercise: https://www.codewars.com/kata/57a429e253ba3381850000fb/train/javascript
-function bmi(weight, height) {
-  let x = weight / Math.pow(height, 2);
-  switch (true){
-    case x <= 18.5: return "Underweight";
-    case x <= 25.0: return "Normal";
-    case x <= 30.0: return "Overweight";
-    case x > 30: return "Obese";
-  }
+// exercise: https://www.codewars.com/kata/53369039d7ab3ac506000467/train/javascript
+function boolToWord( bool ){
+  if (bool == true){return 'Yes'};
+  if (bool == false){return 'No'};
 }
 
-console.log(bmi(84.0, 1.73));
+// exercise: https://www.codewars.com/kata/5769b3802ae6f8e4890009d2/train/javascript
+function removeEveryOther(arr){
+  for (let i=1; i<arr.length; i++){
+    arr.splice(i, 1);
+  }
+  return arr;
+}
+
+console.log(removeEveryOther(['a', 'b', 'c', 'd', 'e', 'f', 'g']));
 </script>
 
 </html>
