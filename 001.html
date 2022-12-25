@@ -79,21 +79,19 @@ function f003(){
   document.getElementById('currentDandT').innerText = Date();
 };
 
-// exercise: https://www.codewars.com/kata/53369039d7ab3ac506000467/train/javascript
-function boolToWord( bool ){
-  if (bool == true){return 'Yes'};
-  if (bool == false){return 'No'};
+// exercise: https://www.codewars.com/kata/53ee5429ba190077850011d4/train/javascript
+function doubleInteger(i) {
+  i = i * 2;
+  return i;
 }
 
-// exercise: https://www.codewars.com/kata/5769b3802ae6f8e4890009d2/train/javascript
-function removeEveryOther(arr){
-  for (let i=1; i<arr.length; i++){
-    arr.splice(i, 1);
-  }
-  return arr;
+// exercise: https://www.codewars.com/kata/5772da22b89313a4d50012f7/javascript
+function greet(name, owner) {
+  if (name == owner){return 'Hello boss';}
+  else {return 'Hello guest';}
 }
 
-console.log(removeEveryOther(['a', 'b', 'c', 'd', 'e', 'f', 'g']));
+console.log(greet('Mike', 'Mike'));
 </script>
 
 </html>
