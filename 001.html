@@ -79,17 +79,26 @@ function f003(){
   document.getElementById('currentDandT').innerText = Date();
 };
 
-// exercise: https://www.codewars.com/kata/55cb632c1a5d7b3ad0000145/train/javascript
-function hoopCount(n) {
-  if (n >= 10) {return "Great, now move on to tricks"} else {return "Keep at it until you get it"};
+// exercise: https://www.codewars.com/kata/555086d53eac039a2a000083/train/javascript
+function lovefunc(flower1, flower2){
+ if (flower1 % 2 == 0 && flower2 % 2 == 0){
+  return false;
+ } else if (flower1 % 2 == 1 && flower2 % 2 == 0){
+  return true;
+ } else if (flower1 % 2 == 1 && flower2 % 2 == 1){
+  return false;
+ } else if (flower1 % 2 == 0 && flower2 % 2 == 1){
+  return true;
+ }
 }
 
-// exercise: https://www.codewars.com/kata/57a0556c7cb1f31ab3000ad7/train/javascript
-function makeUpperCase(str) {
-  return str.toUpperCase();
+// exercise: https://www.codewars.com/kata/56b1f01c247c01db92000076/javascript
+function doubleChar(str) {
+  return str.split("").map(c => c + c).join("");
 }
 
-console.log(makeUpperCase('hello world'));
+
+console.log(doubleChar('Hello World'));
 </script>
 
 </html>
